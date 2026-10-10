@@ -1,5 +1,5 @@
-#ifndef MDDS30_PACKETIZED_H
-#define MDDS30_PACKETIZED_H
+#ifndef MDDS30_PACKETIZED_HPP
+#define MDDS30_PACKETIZED_HPP
 
 #include <Arduino.h>
 
