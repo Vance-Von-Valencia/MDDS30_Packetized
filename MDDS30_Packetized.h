@@ -1,7 +1,7 @@
 #ifndef MDDS30_PACKETIZED_H
 #define MDDS30_PACKETIZED_H
 
-#include <Ardiuno.h>
+#include <Arduino.h>
 
 class MDDS30_Packetized{
 public:
