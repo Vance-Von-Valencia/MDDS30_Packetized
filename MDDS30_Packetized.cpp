@@ -9,8 +9,9 @@ MDDS30_Packetized::MDDS30_Packetized(
     : _serial(serialPort),
       _address(0),
       _started(false)
+      _valid(false)
 {
-    setAddress(address);
+    _valid = setAddress(address);
 }
 
 void MDDS30_Packetized::sync(int txPin,uint32_t baudRate)
@@ -24,13 +25,13 @@ void MDDS30_Packetized::sync(int txPin,uint32_t baudRate)
 
 void MDDS30_Packetized::setAddress(int address)
 {
-    if (address < 0)
-        address = 0;
-
-    if (address > 7)
-        address = 7;
+    if (address < 0 || address > 7)
+        return false;
 
     _address = address;
+    _valid = true;
+
+    return true;
 }
 
 
