@@ -1,0 +1,40 @@
+#include "MDDS30_Packetized.h"
+#include <Ardiuno.h>
+
+
+// Both drivers use the same UART
+MDDS30_Packetized driver1(Serial2, 0);
+MDDS30_Packetized driver2(Serial2, 1);
+
+void setup()
+{
+    // Initialize the shared UART only once
+    driver1.sync(17, 115200);
+
+    // Driver 1: both motors forward at 30%
+    driver1.motor(0, 30);
+    driver1.motor(1, 30);
+
+    // Driver 2: both motors forward at 50%
+    driver2.motor(0, 50);
+    driver2.motor(1, 50);
+
+    delay(2000);
+
+    // Stop both motors on Driver 1
+    driver1.stopAll();
+
+    // Driver 2: motors in opposite directions
+    driver2.motor(0, 40);
+    driver2.motor(1, -40);
+
+    delay(2000);
+
+    // Stop both drivers
+    driver1.stopAll();
+    driver2.stopAll();
+}
+
+void loop()
+{
+}
