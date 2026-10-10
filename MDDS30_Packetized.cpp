@@ -20,6 +20,7 @@ bool MDDS30_Packetized::sync(int txPin,uint32_t baudRate)
 
     delay(1000);
     _serial.write(0x80);
+    _serial.flush();
     _started = true;
 }
 
