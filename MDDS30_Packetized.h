@@ -10,7 +10,7 @@ public:
         HardwareSerial &serialPort = Serial2,
         int address = 0
     );
-// to define the pin and baud rate 
+// to define the pin and baud rate
     void sync(int txPin, uint32_t baudRate = 115200);
 // To set the address
     void setAddress(int address);
