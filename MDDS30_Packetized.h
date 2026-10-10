@@ -11,9 +11,9 @@ public:
         int address = 0
     );
 // to define the pin and baud rate
-    void sync(int txPin, uint32_t baudRate = 115200);
+    bool sync(int txPin, uint32_t baudRate = 115200);
 // To set the address
-    void setAddress(int address);
+    bool setAddress(int address);
 // To specify channel we are using
     void motor(int channel, int speed);
     void stopMotor(int channel);
