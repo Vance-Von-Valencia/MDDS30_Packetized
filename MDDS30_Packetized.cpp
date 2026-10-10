@@ -1,6 +1,6 @@
 
 #include "MDDS30_Packetized.h"
-#include <Ardiuno.h>
+#include <Arduino.h>
 
 MDDS30_Packetized::MDDS30_Packetized(
     HardwareSerial &serialPort,
