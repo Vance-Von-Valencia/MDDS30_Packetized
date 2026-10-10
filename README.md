@@ -267,13 +267,7 @@ Important Implementation Notes
 - The library does not implement acceleration ramps, current sensing, or an emergency-stop circuit.
 - Successful transmission through "write()" does not confirm that the driver received or executed the command.
 - Address and speed inputs are clamped, but invalid channel inputs are ignored without an error message.
-
-Troubleshooting
-
-The code does not compile
-
 - Confirm that the filenames are "MDDS30_Packetized.h" and "MDDS30_Packetized.cpp".
-- Replace "Ardiuno.h" with "Arduino.h".
 - Confirm that the ESP32 board package is installed and the correct board is selected.
 - Ensure the function declarations in the header match the definitions in the source file.
 
