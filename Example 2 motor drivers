@@ -1,5 +1,5 @@
 #include "MDDS30_Packetized.h"
-#include <Ardiuno.h>
+#include <Arduino.h>
 
 
 // Both drivers use the same UART
