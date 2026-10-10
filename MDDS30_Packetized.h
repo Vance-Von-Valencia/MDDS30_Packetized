@@ -23,5 +23,6 @@ private:
     HardwareSerial &_serial;
     int _address;
     bool _started;
+    bool _valid;
 };
 #endif
