@@ -1,0 +1,34 @@
+
+#include <Arduino.h>
+#include "MDDS30_Packetized.h"
+
+MDDS30_Packetized driver(Serial2, 0);
+
+void setup()
+{
+    // Initialize the driver
+    driver.sync(17, 115200);
+
+    // Motor 1 forward at 30%
+    driver.motor(0, 30);
+
+    // Motor 2 forward at 30%
+    driver.motor(1, 30);
+
+    delay(2000);
+
+    // Motor 1 reverse at 30%
+    driver.motor(0, -30);
+
+    // Motor 2 reverse at 30%
+    driver.motor(1, -30);
+
+    delay(2000);
+
+    // Stop both motors
+    driver.stopAll();
+}
+
+void loop()
+{
+}
