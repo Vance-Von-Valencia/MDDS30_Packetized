@@ -305,13 +305,9 @@ Safety
 - Provide a physical emergency-stop or power-disconnect arrangement appropriate for your system.
 - Never rely on a software stop command as a safety-rated emergency stop.
 
-License
-
-Choose and add an appropriate license before distributing this library publicly. No specific license is implied until one is added to the repository.
-
 Author and Contributions
 
-Maintainer: Add your name or GitHub username.
+Maintainer: Shaurya Chauhan
 
 Bug reports, improvements, and protocol corrections are welcome. When reporting an issue, include:
 
