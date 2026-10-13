@@ -3,7 +3,7 @@
 #include <Arduino.h>
 
 MDDS30_Packetized::MDDS30_Packetized(
-    HardwareSerial &serialPort,
+    Stream &serialPort,
     int address
 )
     : _serial(serialPort),
