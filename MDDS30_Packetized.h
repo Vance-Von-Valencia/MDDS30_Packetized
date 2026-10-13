@@ -7,7 +7,7 @@ class MDDS30_Packetized{
 public:
 
     MDDS30_Packetized(
-        Stream &serialPort = Serial2,
+        Stream &serialPort = Serial,
         int address = 0
     );
 // to define the pin and baud rate
