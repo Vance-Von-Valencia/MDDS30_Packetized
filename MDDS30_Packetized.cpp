@@ -6,7 +6,7 @@ MDDS30_Packetized::MDDS30_Packetized(
     HardwareSerial &serialPort,
     int address
 )
-    : _serial(serialPort),
+    : _serial2(serialPort),
       _address(0),
       _started(false),
       _valid(false)
@@ -16,11 +16,11 @@ MDDS30_Packetized::MDDS30_Packetized(
 
 bool MDDS30_Packetized::sync(int txPin,uint32_t baudRate)
 {
-    _serial.begin(baudRate, SERIAL_8N1, -1, txPin);
+    _serial2.begin(baudRate, SERIAL_8N1, -1, txPin);
 
     delay(1000);
-    _serial.write(0x80);
-    _serial.flush();
+    _serial2.write(0x80);
+    _serial2.flush();
     _started = true;
 }
 
@@ -73,9 +73,9 @@ void MDDS30_Packetized::motor(int channel, int speed)
 
     uint8_t checksum = (0x55 + byte1 + value) & 0xFF;
 
-    _serial.write(0x55);
-    _serial.write((uint8_t)byte1);
-    _serial.write((uint8_t)value);
-    _serial.write(checksum);
+    _serial2.write(0x55);
+    _serial2.write((uint8_t)byte1);
+    _serial2.write((uint8_t)value);
+    _serial2.write(checksum);
 }
 
