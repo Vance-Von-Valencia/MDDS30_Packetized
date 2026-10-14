@@ -14,15 +14,22 @@ MDDS30_Packetized::MDDS30_Packetized(
     _valid = setAddress(address);
 }
 
-bool MDDS30_Packetized::sync(int txPin,uint32_t baudRate)
+
+bool MDDS30_Packetized::sync(int txPin, uint32_t baudRate)
 {
+    if (!_valid)
+    return false;
+
     _serial2.begin(baudRate, SERIAL_8N1, -1, txPin);
 
     delay(1000);
     _serial2.write(0x80);
     _serial2.flush();
+
     _started = true;
+    return true;
 }
+
 
 bool MDDS30_Packetized::setAddress(int address)
 {
@@ -50,7 +57,7 @@ void MDDS30_Packetized::stopAll()
 
 void MDDS30_Packetized::motor(int channel, int speed)
 {
-    if (!_started)
+    if (!_started || !_valid)
         return;
 
     if (channel < 0 || channel > 1)
